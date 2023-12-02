@@ -5,7 +5,8 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
 # Copy only the project file to take advantage of caching
-COPY ["CurdCountryAndState/CurdCountryAndState.csproj", "CurdCountryAndState/"]
+COPY ["/absolute/path/to/CurdCountryAndState.csproj", "CurdCountryAndState/"]
+
 
 # Restore dependencies
 RUN dotnet restore "CurdCountryAndState/CurdCountryAndState.csproj"
